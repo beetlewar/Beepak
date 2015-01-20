@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Beepak</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="narrow-style.css" media="only screen and (max-width:1100px)">
+		<meta charset="UTF-8"/>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+		<script type="text/javascript">
+		  var myMap;
+			ymaps.ready(init); // Ожидание загрузки API с сервера Яндекса
+			function init () {
+				myMap = new ymaps.Map("map", {
+				center: [55.76, 37.64], // Координаты центра карты
+				zoom: 10 // Zoom
+			});
+		  }
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a href="index.html"><img src="img/little-logo.png" class="little-logo"></a>
+				<a href="index.html"><img src="img/big-logo.png" class="big-logo"></a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="id.html">Профиль</a></li>
+						<li><a href="events.html">Мероприятия</a></li>
+						<li><a href="about.html">О нас</a></li>
+					</ul>
+				</nav>
+			</header>
+			<input class="search-block" type="text" placeholder="Поиск">
+			<div class="left-block">
+				<a href="create.html">
+					<div class="button">Создать встречу</div>
+				</a>
+				<a href="#">
+					<div class="button">Рандомная встреча</div>
+				</a>
+				<div class="filter-block">
+					<select>
+						<option>Вид встречи</option>
+						<option value="прогулка">Прогулка</option>
+						<option value="концерт">Концерт</option>
+						<option value="экскурсия">Экскурсия</option>
+						<option value="прогулка">Прогулка</option>
+					</select>
+					<select>
+						<option>Тип встречи</option>
+						<option value="одноразовая">Одноразовая</option>
+						<option value="постоянная">Постоянная</option>
+					</select>
+					<select>
+						<option>Начало (через)</option>
+						<option value="1">1 час</option>
+						<option value="2">2 часа</option>
+						<option value="3">3 часа</option>
+						<option value="4">4 часа</option>
+						<option value="5">5 часов</option>
+						<option value="6">6 часов</option>
+						<option value="todau">Сегодня</option>
+						<option value="tomorrow">Завтра</option>
+						<option value="later">Позже</option>
+					</select>
+						<div class="map-block">
+							<span>Геоположение</span>
+							<div id="map"></div>
+						</div>
+					<table align="center">
+						<tr>
+							<td>Количество участников</td>
+							<td><input type="text"></td>
+						</tr>
+						<tr>
+							<td>Бюджет</td>
+							<td><input type="text"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="list">
+				<div class="event">
+					<span class="event-type-in-list">Прогулка</span>
+					<span class="event-name-in-list">Встреча №1 (обычная)</span>
+					<span class="event-type-in-list">Количество участников: 6 &#8226; Бюджет: 4$ &#8226; Одноразовая встреча</span>
+				</div>
+				<div class="vip-event">
+					Встреча №2 (тип VIP)
+				</div>
+				<div class="event">
+					Встреча №3
+				</div>
+				<div class="event">
+					Встреча №4
+				</div>
+				<div class="event">
+					Встреча №5
+				</div>
+				<div class="event">
+					Встреча №6
+				</div>
+				<div class="event">
+					Встреча №7
+				</div>
+				<div class="event">
+					Встреча №8
+				</div>
+				<div class="event">
+					Встреча №9
+				</div>
+				<div class="event">
+					Встреча №10
+				</div>
+				<div class="event">
+					Встреча №11
+				</div>
+			</div>
+			<footer>
+				&#169; 2014 <a href="index.html">Beepak</a>. Все права защищены.| Менюшка:
+				<a href="index.html">Главная</a>
+				<a href="registration.html">Регистрация</a>
+				<a href="events.html">Список</a>
+				<a href="id.html">Профиль</a>
+				<a href="create.html">Создать</a>
+				<a href="e.html">Встреча</a>
+			</footer>
+		</div>
+	</body>
+</html>

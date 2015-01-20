@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Beepak</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="narrow-style.css" media="only screen and (max-width:1100px)">
+		<meta charset="UTF-8"/>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+		<script type="text/javascript">
+		  var myMap;
+			ymaps.ready(init); // Ожидание загрузки API с сервера Яндекса
+			function init () {
+				myMap = new ymaps.Map("map", {
+				center: [55.76, 37.64], // Координаты центра карты
+				zoom: 10 // Zoom
+			});
+		  }
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a href="index.html"><img src="img/little-logo.png" class="little-logo"></a>
+				<a href="index.html"><img src="img/big-logo.png" class="big-logo"></a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="id.html">Профиль</a></li>
+						<li><a href="events.html">Мероприятия</a></li>
+						<li><a href="about.html">О нас</a></li>
+					</ul>
+				</nav>
+			</header>
+				<div class="event-block">
+					<span>Создать новое мероприятие</span>
+					<input type="text" name="tetx" placeholder="Название">
+					<textarea type="text" name="tetx" class="description" placeholder="Описание"></textarea>
+					<table>
+						<tr>
+							<td>Загрузите фото</td>
+							<td>
+								<input type="file">
+							</td>
+						</tr>
+						<tr>
+							<td>Вид встречи</td>
+							<td>
+								<select>
+									<option>Вид встречи</option>
+									<option value="прогулка">Прогулка</option>
+									<option value="концерт">Концерт</option>
+									<option value="экскурсия">Экскурсия</option>
+									<option value="прогулка">Прогулка</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>Тип встречи</td>
+							<td>
+								<select>
+									<option>Тип встречи</option>
+									<option value="одноразовая">Одноразовая</option>
+									<option value="постоянная">Постоянная</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<div class="map-block">
+								<span>Геоположение</span>
+								<div id="map"></div>
+							</div>
+						</tr>
+						<tr>
+							<td>Время и дата</td>
+							<td><input type="date" name="date"></td>
+						</tr>
+						<tr>
+							<td>Количество участников</td>
+							<td><input></td>
+						</tr>
+						<tr>
+							<td>Бьюджет</td>
+							<td><input></td>
+						</tr>
+
+					</table>
+					<input class="button" type="submit" name="submit" value="Создать">
+				</div>
+			<footer>
+				&#169; 2014 <a href="index.html">Beepak</a>. Все права защищены.| Менюшка:
+				<a href="index.html">Главная</a>
+				<a href="registration.html">Регистрация</a>
+				<a href="events.html">Список</a>
+				<a href="id.html">Профиль</a>
+				<a href="create.html">Создать</a>
+				<a href="e.html">Встреча</a>
+			</footer>
+		</div>
+	</body>
+</html>

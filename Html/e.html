@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Beepak</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="narrow-style.css" media="only screen and (max-width:1100px)">
+		<meta charset="UTF-8"/>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+		<script type="text/javascript">
+		  var myMap;
+			ymaps.ready(init); // Ожидание загрузки API с сервера Яндекса
+			function init () {
+				myMap = new ymaps.Map("map", {
+				center: [55.76, 37.64], // Координаты центра карты
+				zoom: 10 // Zoom
+			});
+		  }
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a href="index.html"><img src="img/little-logo.png" class="little-logo"></a>
+				<a href="index.html"><img src="img/big-logo.png" class="big-logo"></a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="id.html">Профиль</a></li>
+						<li><a href="events.html">Мероприятия</a></li>
+						<li><a href="about.html">О нас</a></li>
+					</ul>
+				</nav>
+			</header>
+				<div class="event-block">
+					<div class="name-event">Встреча #1</div>
+					<div class="description-event">Краткое описание встречи</div>
+					<div class="media-block">
+						<a href="#img1"><img src="img/event-photo/q.jpg"></a>
+						<a href="#img2"><img src="img/event-photo/w.jpg"></a>
+						<a href="#img3"><img src="img/event-photo/a.jpg"></a>
+						<a href="#img1"><img src="img/event-photo/q.jpg"></a>
+						<span>Посмотреть все</span>
+					</div>
+					<a href="#" id="img1" class="lightbox"><img src="img/event-photo/q.jpg"></a>
+					<a href="#" id="img2" class="lightbox"><img src="img/event-photo/w.jpg"></a>
+					<a href="#" id="img3" class="lightbox"><img src="img/event-photo/a.jpg"></a>
+					<a href="#" id="img1" class="lightbox"><img src="img/event-photo/q.jpg"></a>
+					<table>
+						<tr>
+							<td>Вид встречи</td>
+							<td>
+								Прогулка
+							</td>
+						</tr>
+						<tr>
+							<td>Тип встречи</td>
+							<td>
+								Одноразовая
+							</td>
+						</tr>
+						<tr>
+							<div class="map-block">
+								<span>Геоположение</span>
+								<div id="map"></div>
+							</div>
+						</tr>
+						<tr>
+							<td>Время и дата</td>
+							<td>16.12.2014 14:00</td>
+						</tr>
+						<tr>
+							<td>Количество участников</td>
+							<td>6</td>
+						</tr>
+						<tr>
+							<td>Бюджет</td>
+							<td>0 грн.</td>
+						</tr>
+
+					</table>
+					<input class="button" type="submit" name="submit" value="Я иду">
+					<div class="wall">
+						<form action="" method="">
+							<textarea></textarea>
+							<input type="submit" class="button" value="Отправить">
+						</form>
+						<div class="comment-block">
+							<img src="img/profile-photo/rk.png" class="profile-photo">
+							<div class="comment">
+								<span class="name-comment">Имя Фамилия</span>
+								<span class="comment-text">Ну, тут текст комментария.</span>
+							</div>
+						</div>
+						<div class="comment-block">
+							<img src="img/profile-photo/rk.png" class="profile-photo">
+							<div class="comment">
+								<span class="name-comment">Имя Фамилия</span>
+								<span class="comment-text">Ну, тут текст комментария №2</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			<footer>
+				&#169; 2014 <a href="index.html">Beepak</a>. Все права защищены.| Менюшка:
+				<a href="index.html">Главная</a>
+				<a href="registration.html">Регистрация</a>
+				<a href="events.html">Список</a>
+				<a href="id.html">Профиль</a>
+				<a href="create.html">Создать</a>
+				<a href="e.html">Встреча</a>
+			</footer>
+		</div>
+	</body>
+</html>
