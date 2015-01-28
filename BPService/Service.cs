@@ -11,6 +11,9 @@ namespace Beepak
     {
         public string GetData(int value)
         {
+            var t = new Test();
+            t.V();
+
             return string.Format("You printed: {0}", value);
         }
     }

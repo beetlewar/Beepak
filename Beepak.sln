@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPService", "BPService\BPSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPServiceHost", "BPServiceHost\BPServiceHost.csproj", "{0494D04A-5663-409D-932B-8F9AB911AFB8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPData", "BPData\BPData.csproj", "{F131D70B-8F5D-4A44-A8CA-38FCD8AEC40C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{CA0C3C7B-0928-4F35-A6D5-BEADB83AB927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPData.Tests", "BPData.Tests\BPData.Tests.csproj", "{6D1A6C89-DF10-4C53-91A5-E936013D1301}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +27,19 @@ Global
 		{0494D04A-5663-409D-932B-8F9AB911AFB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0494D04A-5663-409D-932B-8F9AB911AFB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0494D04A-5663-409D-932B-8F9AB911AFB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F131D70B-8F5D-4A44-A8CA-38FCD8AEC40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F131D70B-8F5D-4A44-A8CA-38FCD8AEC40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F131D70B-8F5D-4A44-A8CA-38FCD8AEC40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F131D70B-8F5D-4A44-A8CA-38FCD8AEC40C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1A6C89-DF10-4C53-91A5-E936013D1301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1A6C89-DF10-4C53-91A5-E936013D1301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1A6C89-DF10-4C53-91A5-E936013D1301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1A6C89-DF10-4C53-91A5-E936013D1301}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6D1A6C89-DF10-4C53-91A5-E936013D1301} = {CA0C3C7B-0928-4F35-A6D5-BEADB83AB927}
 	EndGlobalSection
 EndGlobal
