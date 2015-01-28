@@ -9,7 +9,7 @@
     <ProjectGuid>{3CA68D7A-4274-4D56-B4F5-6C78D0447E65}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BPService</RootNamespace>
+    <RootNamespace>Beepak</RootNamespace>
     <AssemblyName>BPService</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
@@ -49,6 +49,10 @@
   <ItemGroup>
     <Compile Include="IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

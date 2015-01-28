@@ -7,7 +7,7 @@
     <ProjectGuid>{0494D04A-5663-409D-932B-8F9AB911AFB8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BPServiceHost</RootNamespace>
+    <RootNamespace>Beepak</RootNamespace>
     <AssemblyName>BPServiceHost</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -42,16 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BPService\BPService.csproj">
-      <Project>{3ca68d7a-4274-4d56-b4f5-6c78d0447e65}</Project>
-      <Name>BPService</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
