@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 
 namespace Beepak
@@ -11,6 +12,7 @@ namespace Beepak
     public interface IService
     {
         [OperationContract]
+        [WebGet]
         string GetData(int value);
     }
 }
