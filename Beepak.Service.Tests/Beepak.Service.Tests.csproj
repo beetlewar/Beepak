@@ -7,8 +7,8 @@
     <ProjectGuid>{6D1A6C89-DF10-4C53-91A5-E936013D1301}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Beepak</RootNamespace>
-    <AssemblyName>BPData.Tests</AssemblyName>
+    <RootNamespace>Beepak.Service.Tests</RootNamespace>
+    <AssemblyName>Beepak.Service.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,6 +34,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,19 +47,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test1.cs" />
+    <Compile Include="ServiceImplTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BPData\BPData.csproj">
-      <Project>{f131d70b-8f5d-4a44-a8ca-38fcd8aec40c}</Project>
-      <Name>BPData</Name>
-    </ProjectReference>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <ProjectReference Include="..\Beepak.Data\Beepak.Data.csproj">
+      <Project>{f131d70b-8f5d-4a44-a8ca-38fcd8aec40c}</Project>
+      <Name>Beepak.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Beepak.Service\Beepak.Service.csproj">
+      <Project>{3ca68d7a-4274-4d56-b4f5-6c78d0447e65}</Project>
+      <Name>Beepak.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Beepak.Utils\Beepak.Utils.csproj">
+      <Project>{a73ab671-4fe5-4cf7-970b-1f84aac4ca75}</Project>
+      <Name>Beepak.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
