@@ -17,5 +17,10 @@ namespace Beepak.Data.ContextRepository
             this.Context.Users.Add(item);
             this.Context.SaveChanges();
         }
+
+        public override IQueryable<User> QueryAll()
+        {
+            return this.Context.Users;
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace Beepak.Data
     public interface IRepository<T> : 
         IDisposable
     {
+        IQueryable<T> QueryAll();
         void Add(T item);
     }
 }

@@ -13,6 +13,20 @@ namespace Beepak.Service.Tests
     [TestFixture]
     public class ServiceImplTests
     {
+        #region helpers
+
+        private ServiceImpl CreateServiceImpl(IQueryable<User> queryUsers)
+        {
+            var users = MockRepository.GenerateStub<IRepository<User>>();
+            users.Stub(u => u.QueryAll()).Return(queryUsers);
+
+            var repFac = MockRepository.GenerateStub<IRepositoryFactory>();
+            repFac.Stub(r => r.CreateRepository<User>()).Return(users);
+
+            return new ServiceImpl(repFac);
+        }
+
+        #endregion
         [Test]
         [ExpectedException(typeof(EmptyStringException))]
         public void Register_EmptyLogin_ThrowsException()
@@ -123,6 +137,56 @@ namespace Beepak.Service.Tests
             new ServiceImpl(repFac).Register("3", "b", "b", "2@mail.ru", "d");
 
             mock.VerifyAllExpectations();
+        }
+
+        [Test]
+        [ExpectedException(typeof(EmptyStringException))]
+        public void Logon_EmptyLogin_ThrowsException()
+        {
+            new ServiceImpl().Logon("  ", "1");
+        }
+
+        [Test]
+        [ExpectedException(typeof(EmptyStringException))]
+        public void Logon_EmptyPassword_ThrowsException()
+        {
+            new ServiceImpl().Logon("1", "   ");
+        }
+
+        [Test]
+        public void Logon_MockRepository_QueriesAll()
+        {
+            var mock = MockRepository.GenerateMock<IRepository<User>>();
+            mock.Expect(r => r.QueryAll()).Return(new[] { new User() { Login = "a", Password = "b" } }.AsQueryable());
+
+            var repFac = MockRepository.GenerateStub<IRepositoryFactory>();
+            repFac.Stub(r => r.CreateRepository<User>()).Return(mock);
+
+            new ServiceImpl(repFac).Logon("a", "b");
+
+            mock.VerifyAllExpectations();
+        }
+
+        [Test]
+        [ExpectedException(typeof(LoginAbsentException))]
+        public void Logon_AbsentLogin_ThrowsException()
+        {
+            this.CreateServiceImpl(new[] { new User() { Login = "a" } }.AsQueryable()).Logon("b", "p");
+        }
+
+        [Test]
+        public void Logon_LoginExistWithAnotherCase_ReturnsUser()
+        {
+            var user = new User() { Login = "a", Password = "p" };
+            Assert.AreEqual(user, this.CreateServiceImpl(new[] { user }.AsQueryable()).Logon("A", "p"));
+        }
+
+        [Test]
+        [ExpectedException(typeof(PasswordFailedException))]
+        public void Logon_FailedPassword_ThrowsException()
+        {
+            var user = new User() { Login = "a", Password = "p" };
+            Assert.AreEqual(user, this.CreateServiceImpl(new[] { user }.AsQueryable()).Logon("a", "dd"));
         }
     }
 }

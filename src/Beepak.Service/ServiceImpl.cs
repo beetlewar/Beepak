@@ -54,5 +54,28 @@ namespace Beepak.Service
             }
             return user;
         }
+
+        public User Logon(
+            string login, 
+            string password)
+        {
+            login.BPThrowIfStringIsEmpty("login");
+            password.BPThrowIfStringIsEmpty("password");
+
+            using (var rep = this._repFactory.CreateRepository<User>())
+            {
+                var upLogin = login.ToUpper();
+                var user = rep.QueryAll().FirstOrDefault(u => u.Login.ToUpper() == upLogin);
+                if(user == null)
+                {
+                    throw new LoginAbsentException(login);
+                }
+                if(user.Password != password)
+                {
+                    throw new PasswordFailedException(login, password);
+                }
+                return user;
+            }
+        }
     }
 }

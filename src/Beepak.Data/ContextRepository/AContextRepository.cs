@@ -22,6 +22,8 @@ namespace Beepak.Data.ContextRepository
 
         public abstract void Add(T item);
 
+        public abstract IQueryable<T> QueryAll();
+
         public void Dispose()
         {
             if(this.Context != null)
