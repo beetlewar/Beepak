@@ -20,5 +20,11 @@ namespace Beepak.Service
             string passwordRpt,
             string mail,
             string city);
+
+        [OperationContract]
+        [WebGet]
+        User Logon(
+            string login,
+            string password);
     }
 }

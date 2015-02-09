@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="DifferentPasswordsException.cs" />
     <Compile Include="IService.cs" />
+    <Compile Include="LoginAbsentException.cs" />
+    <Compile Include="PasswordFailedException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceImpl.cs" />
   </ItemGroup>
