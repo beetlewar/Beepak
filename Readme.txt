@@ -1,5 +1,6 @@
 Запуск сервиса:
-- Развернуть БД (выполнив скрипт в MS Sql Management Studio 2012) из скрипта, находящегося в src\Beepak.Data\BeepakModel.edmx.sql;
+- Создать БД с именем Beepak
+- Выполнить скрипт в MS Sql Management Studio 2012 из скрипта, находящегося в src\Beepak.Data\BeepakModel.edmx.sql;
 -- Параметры БД:
 --- Имя сервера: localhost\mssqlserver_12
 --- Имя БД: Beepak
