@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Beepak.Data;
+using Beepak.Data.Context;
+using Beepak.Data.Decl;
 using Beepak.Utils;
 using NUnit.Framework;
 using Rhino.Mocks;

@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using Beepak.Data;
+using Beepak.Data.Context;
+using Beepak.Data.Decl;
 
 namespace Beepak.Service
 {

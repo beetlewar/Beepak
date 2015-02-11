@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Beepak.Data
+namespace Beepak.Data.Decl
 {
     public interface IRepository<T> : 
         IDisposable

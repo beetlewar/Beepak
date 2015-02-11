@@ -32,11 +32,11 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -50,57 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContextEx\User.cs" />
     <Compile Include="ContextRepository\AContextRepository.cs" />
-    <Compile Include="BeepakModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BeepakModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BeepakModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BeepakModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BeepakModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BeepakModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="ContextRepository\ContextRepositoryFactory.cs" />
     <Compile Include="ContextRepository\UsersRepository.cs" />
-    <Compile Include="IRepository.cs" />
-    <Compile Include="IRepositoryFactory.cs" />
+    <Compile Include="Context\BeepakContext.cs" />
+    <Compile Include="Context\User.cs" />
+    <Compile Include="Decl\IRepository.cs" />
+    <Compile Include="Decl\IRepositoryFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs">
-      <DependentUpon>BeepakModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="BeepakModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BeepakModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="BeepakModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BeepakModel.edmx</DependentUpon>
-      <LastGenOutput>BeepakModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="BeepakModel.edmx.diagram">
-      <DependentUpon>BeepakModel.edmx</DependentUpon>
-    </None>
-    <None Include="BeepakModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BeepakModel.edmx</DependentUpon>
-      <LastGenOutput>BeepakModel.cs</LastGenOutput>
-    </None>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Beepak.Utils\Beepak.Utils.csproj">
@@ -109,7 +69,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BeepakModel.edmx.sql" />
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
